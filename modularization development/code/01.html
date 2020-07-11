@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<!--
+ES Modules的基本特性
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES Modules的基本特性</title>
+</head>
+<body>
+    <!--
+        TODO: 
+        ES Modules 导入模块
+    -->
+    <!-- 通过给 script 添加 type = module 的属性， 就可以以 ES Module 的标准执行其中的 JS 代码了 -->
+    <script type="module">
+        /* 此间的内容即为一个模块 */
+        console.log('this is es module')
+    </script>
+        <!-- 
+            TODO: 1 ESM 自动采用严格模式，忽略 ‘use strict’ 
+                    - 在该模式下，this无法再指向全局
+        -->
+        <script type="module">
+            console.log(this) // 输出结果: undefined
+        </script>
+        <!-- 
+            TODO: 2 每个 ES Module 都是运行在单独的私有作用域中
+                    - 无法互相访问甚至修改各自的属性
+        -->
+        <script type="module">
+            var foo = 100
+        </script>
+        <script type="module">
+            // console.log(foo) // 输出结果: foo is not defined
+        </script>
+        <!-- 
+            TODO: 3 ESM 是通过 CORS 的方式请求外部 JS 模块的
+                    - CORS 规定，请求的文件必须是开启跨域共享的
+                    - CORS 不支持文件形式访问，只能使用http serve的方式
+        -->
+        <!--
+            TODO: 4 ESM 的 script 标签会延迟执行脚本
+                    - 隐式设置脚本延迟执行 defer 属性
+                    - module 类型的不会阻塞后面的页面渲染, 在渲染完成过后才会开始执行
+        -->
+        <script src="01.js" type="module"></script>
+        <p>需要显示的内容</p>
+</body>
+</html>

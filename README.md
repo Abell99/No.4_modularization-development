@@ -30,7 +30,7 @@
 >
 > 效果图：
 >
-> ![image-20200711100405843](https://pics.images.ac.cn/image/5f091e77af7bc.html)
+> ![image](https://ae01.alicdn.com/kf/Heac15df5dcc94d1bb57f330835b9220co.jpg)
 
 - `npm install`安装项目预设的所需模块
 
